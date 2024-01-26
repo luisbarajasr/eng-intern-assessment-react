@@ -1,3 +1,4 @@
+import './styles/Stopwatch.css';
 import React, { useState, useEffect, useRef } from 'react';
 import StopwatchButton from './StopWatchButton';
 import { clear } from 'console';
@@ -16,7 +17,7 @@ interface LapProps {
 const Lap : React.FC<LapProps> = ({laps}) => {
     let id = 1;
     return (
-        <div>
+        <div className='lap-container'>
             {laps.map(lap => {
                 let current_id = id.toString();
                 id++;
@@ -69,8 +70,8 @@ const Stopwatch: React.FC<StopwatchProps> = () => {
   };
 
   return (
-    <div>
-        <div>
+    <div className='stopwatch-container'>
+        <div className='format-time'>
             <h1>{formatTime(time)}</h1>
         </div>
         <StopwatchButton
